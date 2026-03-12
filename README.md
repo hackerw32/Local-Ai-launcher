@@ -8,12 +8,12 @@ AI Coder Studio is a lightweight, smart Graphical User Interface (GUI) written i
 
 ##  Features
 
-- ** Smart Auto-Discovery:** Automatically detects installed Ollama models and sorts them into logical categories (Android, Web, Python, Reasoning, etc.) based on customizable keyword rules.
-- ** Architect / Dual AI Mode:** Harness the power of two models at once! Assign a massive reasoning model (e.g., DeepSeek-R1 or Llama 3.3) to act as the "Architect" to plan the code, and a fast coding model (e.g., Qwen 2.5 Coder) as the "Editor" to write the files.
-- ** Favorites System:** Save your most-used setups (Model + Architect + Project Folder) and launch them with a single click.
-- ** Launch History:** Keeps track of your last 20 sessions for quick resuming.
-- ** Bilingual Support:** Instantly toggle between English and Greek UI.
-- ** Persistent Data:** Saves your preferences, history, and favorites in a local `.json` file.
+- **Smart Auto-Discovery:** Automatically detects installed Ollama models and sorts them into logical categories (Android, Web, Python, Reasoning, etc.) based on customizable keyword rules.
+- **Architect / Dual AI Mode:** Harness the power of two models at once! Assign a massive reasoning model (e.g., DeepSeek-R1 or Llama 3.3) to act as the "Architect" to plan the code, and a fast coding model (e.g., Qwen 2.5 Coder) as the "Editor" to write the files.
+- **Favorites System:** Save your most-used setups (Model + Architect + Project Folder) and launch them with a single click.
+- **Launch History:** Keeps track of your last 20 sessions for quick resuming.
+- **Bilingual Support:** Instantly toggle between English and Greek UI.
+- **Persistent Data:** Saves your preferences, history, and favorites in a local `.json` file.
 
 ##  Prerequisites
 
