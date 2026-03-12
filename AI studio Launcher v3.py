@@ -7,12 +7,19 @@ import json
 DATA_FILE = "ai_studio_data.json"
 
 CATEGORY_RULES = {
-    "Android / Mobile (Kotlin/Java)": ["android", "java", "swift", "deepseek-coder"],
+    # 1. Εξειδικευμένα (Διαβάζονται πρώτα)
+    "Android / Mobile (Kotlin/Java)": ["android", "java", "swift", "deepseek-coder-v2"],
     "Web Development (HTML/CSS/JS)": ["web", "html", "javascript", "react", "starcoder"],
     "Python / Data Science": ["python", "codellama"],
-    "Reasoning / Complex Logic": ["deepseek-r1", "qwq", "reasoning", "llama3.3", "llama3.1"],
-    "General Coding / Multi-language": ["coder", "qwen2.5-coder", "phind"],
-    "General Chat & Text": ["llama", "mistral", "gemma", "phi"]
+    
+    # 2. Βαριά Λογική & Αρχιτεκτονική
+    "Reasoning / Complex Logic": ["deepseek-r1", "qwq", "reasoning", "llama3.3", "llama3.1", "phi4"],
+    
+    # 3. Προγραμματιστές Γενικής Χρήσης (Πιάνει τα qwen-coder, deepseek-coder κλπ)
+    "General Coding / Multi-language": ["coder", "phind", "wizard"],
+    
+    # 4. Γενικοί Βοηθοί / Chat (Catch-all για τα υπόλοιπα)
+    "General Chat & Text": ["llama", "mistral", "gemma", "phi", "qwen", "deepseek"]
 }
 
 LANGUAGES = {
