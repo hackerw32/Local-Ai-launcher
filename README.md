@@ -1,64 +1,58 @@
-# AI Coder Studio
+# AI Coder Studio (Hybrid Edition v7)
 
-**The Ultimate GUI Launcher for Local AI Coding (Ollama + Aider)**
+**The Ultimate GUI Launcher for Local & Cloud AI Coding (Ollama + Gemini + Groq + Aider)**
 
-AI Coder Studio is a lightweight, smart Graphical User Interface (GUI) written in Python that acts as a control center for your local LLMs. It dynamically scans your installed Ollama models, categorizes them automatically based on their capabilities, and launches [Aider](https://aider.chat/) in a dedicated terminal for your specific project folder.
+AI Coder Studio is a professional, lightweight Graphical User Interface (GUI) written in Python that acts as a mission control for your AI-assisted development. It orchestrates local LLMs via Ollama and world-class Cloud LLMs via Google Gemini and Groq, launching [Aider](https://aider.chat/) with a perfectly tuned "Architect/Editor" configuration.
 
-![AI Coder Studio Screenshot](https://prnt.sc/RS8-98NX3Cmm) 
+## What's New in v7
 
-## Features
+- **Hybrid Cloud Integration:** Use top-tier Cloud models (Google Gemini 1.5 Pro/Flash, Groq Llama 3.3) as the "Architect" while keeping your code local.
+- **Unified API Key Management:** Secure, persistent storage for Gemini and Groq API keys directly in the UI.
+- **Smart Ollama Management:** Real-time detection of Ollama status. Includes a "Reload Models" feature to sync your local models without restarting the app.
+- **Zero-Emoji Professional UI:** A clean, minimalist interface designed for serious development environments.
+- **Integrated Repo Map Setup:** One-click Git initialization with smart `.gitignore` templates for Android, Python, and Web projects.
 
-- **Smart Auto-Discovery:** Automatically detects installed Ollama models and sorts them into logical categories (Android, Web, Python, Reasoning, etc.) based on customizable keyword rules.
-- **Architect / Dual AI Mode:** Harness the power of two models at once! Assign a massive reasoning model (e.g., DeepSeek-R1 or Llama 3.3) to act as the "Architect" to plan the code, and a fast coding model (e.g., Qwen 2.5 Coder) as the "Editor" to write the files.
-- **Favorites System:** Save your most-used setups (Model + Architect + Project Folder) and launch them with a single click.
-- **Launch History:** Keeps track of your last 20 sessions for quick resuming.
-- **Bilingual Support:** Instantly toggle between English and Greek UI.
-- **Persistent Data:** Saves your preferences, history, and favorites in a local `.json` file.
+## Core Features
+
+- **Architect / Dual AI Mode:** Assign a high-reasoning Cloud model (e.g., Gemini 1.5 Pro) to plan the logic and a fast local model (e.g., Qwen 2.5 Coder 32B) to execute the code changes.
+- **Auto-Discovery & Categorization:** Automatically sorts your Ollama library and Cloud endpoints into logical groups.
+- **Favorites & History:** Save complex multi-model setups and access a history of your last 20 project sessions.
+- **Bilingual Support:** Full UI localization for English and Greek.
+- **Safe Environment:** Cloud models only receive your prompts and repo map; the actual code editing is performed locally.
+
+
 
 ## Prerequisites
 
-Before using AI Coder Studio, ensure you have the following installed on your system:
-
-1. **[Python 3.x](https://www.python.org/downloads/)** (The `tkinter` library is included by default).
-2. **[Ollama](https://ollama.com/)**: Must be installed and running in the background.
-3. **[Aider](https://aider.chat/)**: Install it globally via pip:
+1. **[Python 3.10+](https://www.python.org/downloads/)**
+2. **[Ollama](https://ollama.com/)**: Required for local model support.
+3. **[Aider](https://aider.chat/)**: Install via pip:
    ```bash
    pip install aider-chat
    ```
-4. **Local Models:** You need at least one model pulled in Ollama (e.g., `ollama pull qwen2.5-coder:32b`).
+4. **API Keys (Optional):** Obtain a free [Google AI Studio Key](https://aistudio.google.com/) or [Groq API Key](https://console.groq.com/) for Cloud features.
 
-## Installation & Usage
+## Installation
 
-1. Clone this repository:
+1. Clone the repository:
    ```bash
-   git clone [https://github.com/hackerw32/Local-Ai-launcher.git](https://github.com/hackerw32/Local-Ai-launcher.git)
+   git clone https://github.com/hackerw32/Local-Ai-launcher.git
    cd ai-coder-studio
    ```
-2. Run the application:
+2. Run the launcher:
    ```bash
-   python AI_Studio.py
+   python "AI Launcher v7.py"
    ```
-3. Select your project category, pick your AI model, browse for your project folder, and click **LAUNCH AIDER**!
 
-## Customizing Categories
+## Hybrid Workflow Guide
 
-The app uses a smart keyword-based dictionary to categorize your models. You can easily edit the `CATEGORY_RULES` inside `AI_Studio.py` to match your personal workflow. 
+For the best experience, we recommend the **"Hybrid Power Setup"**:
+1. **Architect:** Select `gemini-1.5-pro` (Cloud). It has a massive context window to "understand" your whole project.
+2. **Editor:** Select `qwen2.5-coder:32b` (Local). It writes code with surgical precision on your machine.
+3. **Launch:** Click Launch Aider. You can now talk to Gemini in your terminal, and it will command your local Ollama to edit your files.
 
-```python
-CATEGORY_RULES = {
-    "Android / Mobile (Kotlin/Java)": ["android", "java", "swift", "deepseek-coder-v2"],
-    "Web Development (HTML/CSS/JS)": ["web", "html", "javascript", "react", "starcoder"],
-    "Python / Data Science": ["python", "codellama"],
-    "Reasoning / Complex Logic": ["deepseek-r1", "qwq", "reasoning", "llama3.3", "llama3.1", "phi4"],
-    "General Coding / Multi-language": ["coder", "phind", "wizard"],
-    "General Chat & Text": ["llama", "mistral", "gemma", "phi", "qwen", "deepseek"]
-}
-```
 
-## Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the issues page if you want to contribute.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License.
