@@ -110,6 +110,18 @@ def handle_slash_command(
         ui.info("Goodbye!")
         sys.exit(0)
 
+    if command == "/profile" and len(parts) >= 2:
+        profile_name = parts[1].lower()
+        msg = config.apply_profile(profile_name)
+        if msg.startswith("Unknown"):
+            ui.error(msg)
+        else:
+            # Reinitialize agents with new models
+            architect_ref[0] = ArchitectAgent(config.architect_model, client, project_path, ui)
+            worker_ref[0]    = WorkerAgent(config.worker_model,    client, project_path, ui)
+            ui.success(msg)
+        return True
+
     if command == "/set" and len(parts) >= 3:
         key, value = parts[1].lower(), parts[2]
         if key == "architect":

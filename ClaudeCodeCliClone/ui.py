@@ -62,25 +62,38 @@ Commands
 ────────
   /help                     Show this help
   /models                   Show current model config
-  /set architect <model>    Change the Architect model
-  /set worker <model>       Change the Worker model
+  /profile cpu              CPU profile  (14b architect + 7b worker)
+  /profile gpu              GPU profile  (32b architect + 14b worker)
+  /set architect <model>    Override architect model manually
+  /set worker <model>       Override worker model manually
   /set host <url>           Change the Ollama host
   /clear                    Clear the screen
   /quit  or  /exit          Exit
 
-Examples
-────────
-  /set architect deepseek-r1:14b
-  /set worker qwen2.5-coder:7b
+Hardware Profiles
+─────────────────
+  cpu  →  Xeon 2690v4, 64 GB RAM, no GPU
+           architect: qwen2.5-coder:14b  (4-6 tok/s,  ~9 GB RAM)
+           worker:    qwen2.5-coder:7b   (8-12 tok/s, ~4.5 GB RAM)
 
-Recommended models for your CPU (64 GB RAM)
-────────────────────────────────────────────
-  Architect (best quality):   qwen2.5-coder:32b   (~2-3 tok/s on CPU)
-  Architect (good balance):   qwen2.5-coder:14b   (~4-6 tok/s on CPU)
-  Architect (with reasoning): deepseek-r1:14b     (slower, smarter)
-  Worker   (recommended):     qwen2.5-coder:7b    (~8-10 tok/s on CPU)
+  gpu  →  RTX 5060 16 GB VRAM (or similar)
+           architect: qwen2.5-coder:32b  (20-30 tok/s in VRAM)
+           worker:    qwen2.5-coder:14b  (50-70 tok/s in VRAM)
 
-Install a model:   ollama pull qwen2.5-coder:14b
+How to choose a model
+─────────────────────
+  Tool calling support:  qwen2.5-coder, llama3.1+, mistral-nemo ✓
+                         codellama, older llama2 ✗
+  Code quality ranking:  qwen2.5-coder > deepseek-coder-v2 > codellama
+  For reasoning/planning: /set architect deepseek-r1:14b  (cpu)
+                           /set architect deepseek-r1:32b  (gpu)
+  Speed vs quality:       7b = fast/ok   14b = balanced   32b = best/slow
+
+Install models:
+  ollama pull qwen2.5-coder:7b
+  ollama pull qwen2.5-coder:14b
+  ollama pull qwen2.5-coder:32b
+  ollama pull deepseek-r1:14b
 """
         if HAS_RICH:
             _console.print(Markdown(help_text))
