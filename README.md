@@ -1,10 +1,10 @@
-# AI Coder Studio (Hybrid Edition v7)
+# AI Coder Studio (Hybrid Edition v5)
 
 **The Ultimate GUI Launcher for Local & Cloud AI Coding (Ollama + Gemini + Groq + Aider)**
 
 AI Coder Studio is a professional, lightweight Graphical User Interface (GUI) written in Python that acts as a mission control for your AI-assisted development. It orchestrates local LLMs via Ollama and world-class Cloud LLMs via Google Gemini and Groq, launching [Aider](https://aider.chat/) with a perfectly tuned "Architect/Editor" configuration.
 
-## What's New in v7
+## What's New in v5
 
 - **Hybrid Cloud Integration:** Use top-tier Cloud models (Google Gemini 1.5 Pro/Flash, Groq Llama 3.3) as the "Architect" while keeping your code local.
 - **Unified API Key Management:** Secure, persistent storage for Gemini and Groq API keys directly in the UI.
@@ -41,7 +41,7 @@ AI Coder Studio is a professional, lightweight Graphical User Interface (GUI) wr
    ```
 2. Run the launcher:
    ```bash
-   python "AI Launcher v7.py"
+   python "AI Launcher v5 .py"
    ```
 
 ## Hybrid Workflow Guide
